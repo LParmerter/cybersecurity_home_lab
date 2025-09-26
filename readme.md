@@ -7,4 +7,4 @@ This repository showcases my cybersecurity home lab projects, which are a collec
 ## Table of Contents
 
 ### 1) Cybersecurity Tools
-- [Exploring Ubuntu Home Lab](1%20Cybersecurity%20Tools/Exploring%20Ubuntu%20Home%20Lab.md)
+- [Exploring Ubuntu Home Lab](1\)%20Cybersecurity%20Tools/Exploring%20Ubuntu%20Home%20Lab.md)
