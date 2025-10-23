@@ -21,14 +21,14 @@
 	the rest of this testing was completed in the ubuntu user and sally, rather than the root user. While the root user avoids having to log in and use sudo, it's bad practice to stay logged in as root and leaves a system vulnerable to outside attacks. 
 
 **Exploring Groups**  
-6. First I wanted to check what group the ubuntu user belongs to, which could be done easily with the ``groups`` command. I then compared this with the groups sally belongs to, and used the ``usermod`` command with the argument ``-aG``to give sally sudo privileges by adding them to the "sudo" group. 
+6. First I wanted to check what group the ubuntu user belongs to, which could be done easily with the ``groups`` command. I then compared this with the groups sally belongs to, and used the ``usermod`` command with the argument ``-aG``to give sally sudo privileges by adding them to the "sudo" group.
 ![[Pasted image 20251002212251.png]]
 
 7. I then created "cybersec", a new group for sally, using the ``groupadd`` command, and added them using ``usermod -aG`` once again. Upon re-checking which groups user sally is a part of, sudo and sybersec are now displayed as well.
 ![[Pasted image 20251002213305.png]]
 
 **Permissions and Access Control Lists**  
-8. Using ``mkdir``, I created a new directory in the home directory, called homelab1. I then checked for the specific permissions of the directory using ``ls -ld``, which revealed the owner and group owner of the directory to be myself, user logan. This also showed that both as owner and group owner, I have read, write, and execute capablities (as shown with ``[rwxrwx]r-x``), but other users may only read and execute (as shown by the ``-`` in ``rwxrwx[r-x]``). 
+8. Using ``mkdir``, I created a new directory in the home directory, called homelab1. I then checked for the specific permissions of the directory using ``ls -ld``, which revealed the owner and group owner of the directory to be myself, user logan. This also showed that both as owner and group owner, I have read, write, and execute capablities (as shown with ``[rwxrwx]r-x``), but other users may only read and execute (as shown by the ``-`` in ``rwxrwx[r-x]``).
 ![[Pasted image 20251002214051.png]]
 
 9. Next, I wanted to create a simple bash executable able to print "Hello World!". So I changed my directory using ``cd`` to homelab1, and created the bash file using ``nano``. That opened the interface seen below, where I added the shebang (``#!/bin/bash``) and the command ``echo "Hello World!"``.  The shebang tells Linux to execute the script using bash, and ``echo`` is used to print "Hello World!" to the terminal. 
@@ -36,10 +36,10 @@
 ![[Pasted image 20251002220157.png]]
 	Once the script itself was written, I exited back to the terminal and used ``chmod +x`` to add the ability to execute the helloWorld file I just created. I was then able to execute it with ``./helloWorld``, which successfully output "Hello World!" to the terminal!
 
-10. Having just made the program, I wanted to check what permissions it had by default. Using ``ls -la``, I saw that the owner and group had read write and execute permissions, whereas once again other could only read and execute. I decided that for this file, I wanted the group to only be able to write and execute, so I changed these permissions using the ``chmod g=wx`` command seen below. 
+10. Having just made the program, I wanted to check what permissions it had by default. Using ``ls -la``, I saw that the owner and group had read write and execute permissions, whereas once again other could only read and execute. I decided that for this file, I wanted the group to only be able to write and execute, so I changed these permissions using the ``chmod g=wx`` command seen below.
 ![[Pasted image 20251002223042.png]]
 
- 11. As a last point of exploration, I wanted to view and change the Access Control List of the helloWorld file. first I checked the current list of permissions with ``getfacl``, and then used ``setfacl -m`` to modify user sally's file permissions, specifying that they should have the ability to read and write to the file only. 
+ 11. As a last point of exploration, I wanted to view and change the Access Control List of the helloWorld file. first I checked the current list of permissions with ``getfacl``, and then used ``setfacl -m`` to modify user sally's file permissions, specifying that they should have the ability to read and write to the file only.
 ![[Screenshot 2025-10-02 223541 1.png]]
 
 And that concludes my introductory exploration of the Linux command line and the basics of file security!
