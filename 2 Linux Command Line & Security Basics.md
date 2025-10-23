@@ -1,10 +1,9 @@
-#Lab #Cybersecurity 
 
 1. Upon first opening my virtual machine in ubuntu, I ran the ``sudo apt update`` command to see what updates my machine could perform. 
 ![[Pasted image 20251002180930.png]]
 	I then confirmed the updates to install them with ``sudo apt upgrade`` and restarted the system with ``reboot``. 
 
-**Exploring Users**
+**Exploring Users**   
 2. Using ``sudo su root`` I opened up a root shell, noting the ``#`` replacing the usual ``$`` in the prompt. With the open root shell, I was able to create two new users: "bobby", using ``useradd``, and "sally", using ``adduser``.
 ![[Pasted image 20251002203028.png]]
 	this showed that the main difference between these two commands was that ``adduser`` is a script, able to create a home directory, group, a password, and other related information to fully set up the new user, whereas ``useradd`` simply creates the user with no other information.
@@ -21,14 +20,14 @@
 ![[Pasted image 20251002210932.png]]
 	the rest of this testing was completed in the ubuntu user and sally, rather than the root user. While the root user avoids having to log in and use sudo, it's bad practice to stay logged in as root and leaves a system vulnerable to outside attacks. 
 
-**Exploring Groups**
+**Exploring Groups**  
 6. First I wanted to check what group the ubuntu user belongs to, which could be done easily with the ``groups`` command. I then compared this with the groups sally belongs to, and used the ``usermod`` command with the argument ``-aG``to give sally sudo privileges by adding them to the "sudo" group. 
 ![[Pasted image 20251002212251.png]]
 
 7. I then created "cybersec", a new group for sally, using the ``groupadd`` command, and added them using ``usermod -aG`` once again. Upon re-checking which groups user sally is a part of, sudo and sybersec are now displayed as well.
 ![[Pasted image 20251002213305.png]]
 
-**Permissions and Access Control Lists**
+**Permissions and Access Control Lists**  
 8. Using ``mkdir``, I created a new directory in the home directory, called homelab1. I then checked for the specific permissions of the directory using ``ls -ld``, which revealed the owner and group owner of the directory to be myself, user logan. This also showed that both as owner and group owner, I have read, write, and execute capablities (as shown with ``[rwxrwx]r-x``), but other users may only read and execute (as shown by the ``-`` in ``rwxrwx[r-x]``). 
 ![[Pasted image 20251002214051.png]]
 
