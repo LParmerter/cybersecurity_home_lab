@@ -1,24 +1,24 @@
 
-1. Upon first opening my virtual machine in ubuntu, I ran the ``sudo apt update`` command to see what updates my machine could perform. 
+1. Upon first opening my virtual machine in ubuntu, I ran the ``sudo apt update`` command to see what updates my machine could perform.
 ![[Pasted image 20251002180930.png]]
-	I then confirmed the updates to install them with ``sudo apt upgrade`` and restarted the system with ``reboot``. 
+	I then confirmed the updates to install them with ``sudo apt upgrade`` and restarted the system with ``reboot``.
 
 **Exploring Users**   
 2. Using ``sudo su root`` I opened up a root shell, noting the ``#`` replacing the usual ``$`` in the prompt. With the open root shell, I was able to create two new users: "bobby", using ``useradd``, and "sally", using ``adduser``.
 ![[Pasted image 20251002203028.png]]
 	this showed that the main difference between these two commands was that ``adduser`` is a script, able to create a home directory, group, a password, and other related information to fully set up the new user, whereas ``useradd`` simply creates the user with no other information.
 
-3. Next, I logged in as sally with ``sudo su``, which was then reflected in the prompt, and tested the default permissions by attempting to create a new user, "earl". 
+3. Next, I logged in as sally with ``sudo su``, which was then reflected in the prompt, and tested the default permissions by attempting to create a new user, "earl".
 ![[Pasted image 20251002204541.png]]
-	this resulted in an error, as the new user "sally" does not have root or sudo access to add a new user to the system. 
+	this resulted in an error, as the new user "sally" does not have root or sudo access to add a new user to the system.
 
 4. Having tested sally, I reverted to the original user, ubuntu, using ``exit`` twice, and used the command ``sudo userdel bobby`` to delete the other user created previously, bobby.
 ![[Pasted image 20251002205647.png]]
-	I then used ``cat /etc/passwd`` to check that bobby had in fact been deleted. No extra directories were left over as bobby was created with ``useradd``, unlike sally. 
+	I then used ``cat /etc/passwd`` to check that bobby had in fact been deleted. No extra directories were left over as bobby was created with ``useradd``, unlike sally.
 
 5. Now that I was done with sally for now, I changed the user's password to something I would remember with ``sudo passwd sally``. I then checked my user id with ``id``, which was 1000.
 ![[Pasted image 20251002210932.png]]
-	the rest of this testing was completed in the ubuntu user and sally, rather than the root user. While the root user avoids having to log in and use sudo, it's bad practice to stay logged in as root and leaves a system vulnerable to outside attacks. 
+	the rest of this testing was completed in the ubuntu user and sally, rather than the root user. While the root user avoids having to log in and use sudo, it's bad practice to stay logged in as root and leaves a system vulnerable to outside attacks.
 
 **Exploring Groups**  
 6. First I wanted to check what group the ubuntu user belongs to, which could be done easily with the ``groups`` command. I then compared this with the groups sally belongs to, and used the ``usermod`` command with the argument ``-aG``to give sally sudo privileges by adding them to the "sudo" group.
