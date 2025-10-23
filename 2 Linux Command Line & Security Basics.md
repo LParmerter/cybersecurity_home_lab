@@ -1,6 +1,6 @@
 
 1. Upon first opening my virtual machine in ubuntu, I ran the ``sudo apt update`` command to see what updates my machine could perform.
-![[Pasted image 20251002180930.png]]
+![](Screenshot%202025-10-02%20180854.png)
 	I then confirmed the updates to install them with ``sudo apt upgrade`` and restarted the system with ``reboot``.
 
 **Exploring Users**   
