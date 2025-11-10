@@ -10,7 +10,7 @@ This repository showcases my cybersecurity home lab projects, which are a collec
 - [Exploring Ubuntu Home Lab](Labs/Cybersecurity/Exploring%20Ubuntu%20Home%20Lab.md)
 
 ### 2. Cybersecurity Basics
-- [Linux Command Line and Security Basics](3%20Linux%20Command%20Line%20&%20Security%20Basics.md)
+- [Linux Command Line and Security Basics](2%20Linux%20Command%20Line%20&%20Security%20Basics.md)
 
 ### 3. Environment Variables and Set-UID
-- [Environment Variables and Set-UID SEED Lab](2%20Environment%20Variable%20and%20Set-UID%20SEED%20Lab.md)
+- [Environment Variables and Set-UID SEED Lab](3%20Environment%20Variable%20and%20Set-UID%20SEED%20Lab.md)
