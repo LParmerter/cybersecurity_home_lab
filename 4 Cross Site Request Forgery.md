@@ -4,7 +4,7 @@
 	Unlike my previous home labs, for this one I did not use my usual ubuntu virtual machine. Instead, I used my actual windows machine, and started by installing Node.js. As for my text editor, I used VS Code. After installing node.js, I opened the terminal and cd'd into the folder containing all the files I was planning to use, and used ``npm install`` to make sure I had all the needed dev dependencies installed, then started the server with ``npm start``.  
 ![](attachments/4_01.png)  
 
-2. **GET request exploit on target site**
+2. **GET request exploit on target site**  
 	I then opened my web browser to http://localhost:3000/ as the target website of the attack, and logged in as user "bob".  
 ![](attachments/4_02.png)  
 ![](attachments/4_03.png)  
