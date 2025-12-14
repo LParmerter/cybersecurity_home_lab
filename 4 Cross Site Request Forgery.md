@@ -4,7 +4,7 @@
 	Unlike my previous home labs, for this one I did not use my usual ubuntu virtual machine. Instead, I used my actual windows machine, and started by installing Node.js. As for my text editor, I used VS Code. After installing node.js, I opened the terminal and cd'd into the folder containing all the files I was planning to use, and used ``npm install`` to make sure I had all the needed dev dependencies installed, then started the server with ``npm start``.  
 ![](attachments/4_01.png)  
 
-2. **sdf**  
+2. **GET request exploit on target site**
 	I then opened my web browser to http://localhost:3000/ as the target website of the attack, and logged in as user "bob".  
 ![](attachments/4_02.png)  
 ![](attachments/4_03.png)  
@@ -29,3 +29,6 @@
 
 6. **Possible Countermeasure**  
 	In order to prevent an CSRF attack like this from occurring, the target site must have security measures in place to check if there is an external site is making the request on behalf of the user, or if it is actually the user themself. One way to do this would be through use of a secret token, embedded in each different users' web pages, that is included whenever a request is submitted from within the actual site. The server would check every time a request is made to see if that user's secret token is included, and if not, it would know the request is coming from an external source and the attack would fail.  
+
+7. **Code & Programs**
+	Attached alongside this file is the [csrf-examples.zip] file containing all the finished code used in this lab as well as the written POST request program.
