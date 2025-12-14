@@ -14,3 +14,6 @@ This repository showcases my cybersecurity home lab projects, which are a collec
 
 ### 3. Environment Variables and Set-UID
 - [Environment Variables and Set-UID SEED Lab](3%20Environment%20Variable%20and%20Set-UID%20SEED%20Lab.md)
+
+### 4. Cross-Site Request Forgery
+- [Cross-Site Request Forgery Home Lab](4%20Cross%20SIte%20Request%20Forgery.md)
